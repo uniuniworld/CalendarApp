@@ -10,15 +10,19 @@ import UIKit
 import FSCalendar
 
 
-class TestCalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
+class TestCalendarViewController: UIViewController {
     
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         calendar.appearance.headerDateFormat = "MM月"
-
+        
+        calendar.scrollDirection = .vertical
+        
         // Do any additional setup after loading the view.
     }
     
@@ -28,18 +32,37 @@ class TestCalendarViewController: UIViewController, FSCalendarDelegate, FSCalend
     }
     
     @IBAction func week(_ sender: Any) {
-        calendar.setScope(.week, animated: true)
+        calendar.scope = .week
     }
     @IBAction func month(_ sender: Any) {
-        calendar.setScope(.month, animated: true)
+        calendar.scope = .month
     }
     
 }
 
-//extension FSCalendar: FSCalendarDelegate {
+//extension TestCalendarViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        return 1
+//    }
+//
+//
+//
+//
 //
 //}
-//
-//extension FSCalendar: FSCalendarDataSource {
-//
-//}
+
+extension TestCalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
+    
+    public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let tmpData = Calendar(identifier: .gregorian)
+        let year = tmpData.component(.year, from: date)
+        let month = tmpData.component(.month, from: date)
+        let day = tmpData.component(.day, from: date)
+        print("\(year)/\(month)/\(day)")
+    }
+}

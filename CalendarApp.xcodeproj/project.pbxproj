@@ -13,6 +13,7 @@
 		3C4EEA5624D9476E002216B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4EEA5424D9476E002216B8 /* Main.storyboard */; };
 		3C4EEA5824D9476F002216B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4EEA5724D9476F002216B8 /* Assets.xcassets */; };
 		3C4EEA5B24D9476F002216B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4EEA5924D9476F002216B8 /* LaunchScreen.storyboard */; };
+		3C5C525524DBC8E200233CBD /* FSCalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5C525424DBC8E200233CBD /* FSCalendarDelegate.swift */; };
 		3CDCE92624DA35F200D4DDCF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCE92524DA35F200D4DDCF /* CalendarViewController.swift */; };
 		3CDCE92824DA780600D4DDCF /* TestCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDCE92724DA780600D4DDCF /* TestCalendarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 		3C4EEA5724D9476F002216B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C4EEA5A24D9476F002216B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C4EEA5C24D9476F002216B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5C525424DBC8E200233CBD /* FSCalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarDelegate.swift; sourceTree = "<group>"; };
 		3CDCE92524DA35F200D4DDCF /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		3CDCE92724DA780600D4DDCF /* TestCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCalendarViewController.swift; sourceTree = "<group>"; };
 		9666E730136890FFF419E490 /* Pods-CalendarApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarApp.debug.xcconfig"; path = "Target Support Files/Pods-CalendarApp/Pods-CalendarApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 		3C4EEA4224D9476E002216B8 = {
 			isa = PBXGroup;
 			children = (
+				3C5C525324DBC8A900233CBD /* Memo */,
 				3C4EEA4D24D9476E002216B8 /* CalendarApp */,
 				3C4EEA4C24D9476E002216B8 /* Products */,
 				B791B86B160F4D1AD95023FE /* Pods */,
@@ -75,6 +78,14 @@
 				3CDCE92724DA780600D4DDCF /* TestCalendarViewController.swift */,
 			);
 			path = CalendarApp;
+			sourceTree = "<group>";
+		};
+		3C5C525324DBC8A900233CBD /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				3C5C525424DBC8E200233CBD /* FSCalendarDelegate.swift */,
+			);
+			path = Memo;
 			sourceTree = "<group>";
 		};
 		84DCDABEC5748812867954A9 /* Frameworks */ = {
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5C525524DBC8E200233CBD /* FSCalendarDelegate.swift in Sources */,
 				3CDCE92824DA780600D4DDCF /* TestCalendarViewController.swift in Sources */,
 				3CDCE92624DA35F200D4DDCF /* CalendarViewController.swift in Sources */,
 				3C4EEA4F24D9476E002216B8 /* AppDelegate.swift in Sources */,

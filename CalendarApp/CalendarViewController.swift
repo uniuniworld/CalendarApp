@@ -34,11 +34,20 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     }
     
+    
+    @objc func swipUp() {
+        self.calendar.setScope(.week, animated: false)
+    }
+    
     // メモリを使いすぎた時
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func week(_ sender: Any) {
+        calendar.setScope(.week, animated: true)
+        
+    }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
     //fileprivate var dataFormatter = {let formatter = DataFormatter()}
