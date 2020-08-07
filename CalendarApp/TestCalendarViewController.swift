@@ -24,8 +24,8 @@ class TestCalendarViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        //tableView.delegate = self
+        //tableView.dataSource = self
         
         calendar.appearance.headerDateFormat = "MM月"
         
@@ -44,6 +44,8 @@ class TestCalendarViewController: UIViewController, UITableViewDelegate, UITable
         let month = tmpData.component(.month, from: date)
         let day = tmpData.component(.day, from: date)
         label.text = "\(year)/\(month)/\(day)"
+        self.calendar.scope = .week
+        
     }
     
     @IBAction func selectToday(_ sender: Any) {
@@ -104,18 +106,17 @@ class TestCalendarViewController: UIViewController, UITableViewDelegate, UITable
     // MARK:- toggleClicked
     @IBAction func toggleClicked(_ sender: Any) {
         if self.calendar.scope == .month {
-            //self.calendar.setScope(.week, animated: self.animationSwitch.isOn)
-            self.calendar.scope = .week
+            self.calendar.setScope(.week, animated: self.animationSwitch.isOn)
+            //self.calendar.scope = .week
             print("week")
         } else {
-            //self.calendar.setScope(.month, animated: self.animationSwitch.isOn)
-            self.calendar.scope = .month
+            self.calendar.setScope(.month, animated: self.animationSwitch.isOn)
+            //self.calendar.scope = .month
             print("month")
         }
     }
     
     
-
     
 }
 
