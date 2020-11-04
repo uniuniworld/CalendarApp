@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         calendar.clipsToBounds = false
         calendar.appearance.separators = .interRows
         
+        calendar.appearance.borderRadius = 0
+        
+        //calendar.monthPosition(for: <#T##FSCalendarCell#>)
+
         calendar.appearance.headerDateFormat = "MM月"
         
         let week = ["日", "月", "火", "水", "木", "金", "土"]
@@ -29,7 +33,7 @@ class ViewController: UIViewController {
         }
         
         calendar.scrollDirection = .vertical
-        calendar.pagingEnabled = false
+        //calendar.pagingEnabled = false
         
        
         // color
@@ -57,5 +61,8 @@ extension ViewController: FSCalendarDelegate {
         print("\(year)/\(month)/\(day)")
         //self.calendar.scope = .week
     }
+    
+}
+extension ViewController: FSCalendarDelegateAppearance {
     
 }
